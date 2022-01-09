@@ -1,39 +1,57 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
-
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+Simple Widget to create Image with Shadow in Flutter.
 
 ## Features
 
-TODO: List what your package can do. Maybe include images, gifs, or videos.
+-   Able to adjust border radius size
+-   Able to adjust blur radius size
+-   Able to adjust scale of shadow
+-   Able to adjust offset of shadow
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+Add this line into your `pubspec.yaml`
+
+```yaml
+dependencies:
+  image_shadow: ^0.0.1
+```
+
+dont forget to refresh 
+
+```bash
+$ flutter pub get
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder. 
-
 ```dart
-const like = 'sample';
+import 'package:image_shadow/image_shadow.dart';
+
+...
+
+ImageShadow(
+  blurRadius: 6,
+  borderRadius: 20,
+  scale: 1,
+  offset: Offset(5, 5),
+  image: Image.asset(
+    "assets/images/logo.jpg",
+  ),
+);
 ```
+
+## Params
+
+| Name         | Type    | Default Value    | Option    |
+| ------------ | ------- | ---------------- | --------- |
+| blurRadius   | double? | 8.0              | Nullable  |
+| borderRadius | double? | 0                | Nullable  |
+| scale        | double? | 1                | Nullable  |
+| offset       | Offset? | Offset(8.0, 8.0) | Nullable  |
+| image        | Image   | -                | Mandatory |
 
 ## Additional information
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+Please feel free to open the issue on the github repo or contribute if you found some bug.
